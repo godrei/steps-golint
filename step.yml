@@ -1,0 +1,29 @@
+title: Golint
+summary: Run golint
+description: Run golint
+website: https://github.com/godrei/steps-golint
+source_code_url: https://github.com/godrei/steps-golint
+support_url: https://github.com/godrei/steps-golint/issues
+
+type_tags:
+  - test
+
+toolkit:
+  go:
+    package_name: github.com/godrei/steps-golint
+
+inputs:
+- include: ""
+  opts:
+    title: Include pattern
+    summary: Run golint on matching files.
+    description: |-
+      golint will be run on path matching to the given glob pattern.
+
+      Leave this input empty to run golint on every .go files in the current working directory.
+- exclude: "*/vendor/*"
+  opts:
+    title: Exclude pattern
+    summary: Skipp golint on matching files.
+    description: |-
+      golint will be skipped on path matching to the given glob pattern.
