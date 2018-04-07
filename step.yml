@@ -13,14 +13,6 @@ toolkit:
     package_name: github.com/godrei/steps-golint
 
 inputs:
-- include: ""
-  opts:
-    title: Include pattern
-    summary: Run golint on matching files.
-    description: |-
-      golint will be run on path matching to the given glob pattern.
-
-      Leave this input empty to run golint on every .go files in the current working directory.
 - exclude: "*/vendor/*"
   opts:
     title: Exclude pattern
