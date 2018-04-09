@@ -1,6 +1,10 @@
 title: Golint
-summary: Run golint
-description: Run golint
+summary: Runs golint
+description: |-
+  Runs golint command on the given packages one-by-one:
+  
+  `golint -set_exit_status <package>`
+
 website: https://github.com/godrei/steps-golint
 source_code_url: https://github.com/godrei/steps-golint
 support_url: https://github.com/godrei/steps-golint/issues
@@ -13,9 +17,11 @@ toolkit:
     package_name: github.com/godrei/steps-golint
 
 inputs:
-- exclude: "*/vendor/*"
+- packages: $BITRISE_GO_PACKAGES
   opts:
-    title: Exclude pattern
-    summary: Skipp golint on matching files.
+    title: golint target packages
+    summary: golint target packages
     description: |-
-      golint will be skipped on path matching to the given glob pattern.
+      Comma separated list of go packages, to run the golint command against.
+
+      Example: "github.com/owner/repo,github.com/owner/repo/package"
